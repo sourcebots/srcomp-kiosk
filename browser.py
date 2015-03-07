@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
+import os.path
 import PySide.QtCore
 import PySide.QtGui
 import PySide.QtWebKit
 import sys
 import yaml
-import os
 
 class Browser():
     def __init__(self, configPath):
@@ -47,7 +47,6 @@ class Browser():
         sys.exit(self.app.exec_())
 
 if __name__ == '__main__':
-    import os.path
     mydir = os.path.dirname(os.path.realpath(__file__))
     configPath = os.path.join(mydir, 'testconf.yaml')
     web = Browser(configPath)

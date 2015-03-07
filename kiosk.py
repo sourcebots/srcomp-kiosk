@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import argparse
-import browser
 import subprocess
+
+import browser
 
 # Parse arguments to get the config file location
 
