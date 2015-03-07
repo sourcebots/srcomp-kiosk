@@ -45,3 +45,10 @@ class Browser():
         self.app.setOverrideCursor(PySide.QtCore.Qt.BlankCursor)
 
         sys.exit(self.app.exec_())
+
+if __name__ == '__main__':
+    import os.path
+    mydir = os.path.dirname(os.path.realpath(__file__))
+    configPath = os.path.join(mydir, 'testconf.yaml')
+    web = Browser(configPath)
+    web.go()
