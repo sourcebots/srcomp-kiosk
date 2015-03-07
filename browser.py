@@ -18,7 +18,7 @@ class Browser():
     def updateWebView(self):
         try:
             with open(self.configPath, 'r') as f:
-                url = yaml.load(f)['url']
+                url = yaml.safe_load(f)['url']
                 if self.oldUrl != url:
                     print("Loading new url " + url
                             + " (was " + (self.oldUrl or "None") + ")")
