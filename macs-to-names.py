@@ -5,9 +5,9 @@ from __future__ import print_function
 import os.path
 
 FILE_NAME = 'pi_macs'
-NAME_TEMPLATE = 'pi-{page}-{qual}.sr'
+NAME_TEMPLATE = 'pi-{page}-{qual}.sb'
 PAGE_TEMPLATE = 'http://compbox-2017/{page}.html{query}'
-CONTENT_TEMPLATE = '''# Student Robotics Pi #{num}
+CONTENT_TEMPLATE = '''# Sourcebots Pi #{num}
 ---
 url: {url}
 hostname: {name}

@@ -1,13 +1,12 @@
 # Num    MAC          PAGE
- 0 b8:27:eb:89:e9:e0 outside # plasma screen on floor 0
- 1 b8:27:eb:51:84:16 shepherding # shepherding display in the staging area
- 2 b8:27:eb:e9:ec:98 outside # plasma screen on floor 2
- 3 b8:27:eb:2e:84:e4 arena?A,0
- 4 b8:27:eb:ec:0e:80 arena?A,1
- 5 b8:27:eb:e4:7a:ef arena?A,2
- 6 b8:27:eb:ed:f2:77 arena?A,3
- 7 b8:27:eb:be:ce:73 arena?B,0
- 8 b8:27:eb:b9:2b:29 arena?B,1
- 9 b8:27:eb:3c:0b:c5 arena?B,2
-10 b8:27:eb:eb:9a:17 arena?B,3
-11 b8:27:eb:69:f2:04 staging # staging display in the staging area
+
+# Outside display on peter's pi2
+ x b8:27:eb:d1:9a:f8 outside
+
+# Corner 0 (balcony side near main door)
+ 4 b8:27:eb:20:92:1d staging
+ 3 b8:27:eb:0f:a4:09 arena?main,0
+
+# Corner 1 (stage side near fire exit)
+ 1 b8:27:eb:7c:7f:eb staging
+ 7 b8:27:eb:2c:3d:a6 arena?main,1
