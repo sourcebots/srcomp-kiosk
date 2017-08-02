@@ -145,6 +145,6 @@ class srcomp-kiosk {
 
   host { 'compbox-2017':
     ensure => present,
-    ip     => '192.168.8.230',
+    ip     => '192.168.1.42',
   }
 }
