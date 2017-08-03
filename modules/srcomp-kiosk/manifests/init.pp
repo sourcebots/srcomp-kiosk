@@ -52,7 +52,7 @@ class srcomp-kiosk {
   file { "${user_home}/show-procs":
     ensure  => file,
     mode    => '0755',
-    content => 'ps aux | grep --color -E "(unclutter|icew|python)"',
+    content => 'ps aux | grep --color -E "(unclutter|icew|fire|python)"',
   }
 
   file { "${user_home}/.bash_aliases":
