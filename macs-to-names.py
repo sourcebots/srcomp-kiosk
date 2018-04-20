@@ -7,7 +7,7 @@ import os.path
 FILE_NAME = 'pi_macs'
 NAME_TEMPLATE = 'pi-{page}-{qual}.sb'
 PAGE_TEMPLATE = 'http://%{{::compbox_hostname}}/{page}.html{query}'
-CONTENT_TEMPLATE = '''# Sourcebots Pi #{num}
+CONTENT_TEMPLATE = '''# Sourcebots Pi {ident}
 ---
 url: {url}
 hostname: {name}
@@ -34,10 +34,10 @@ def build_url(page):
         query = '?' + parts[1]
         return PAGE_TEMPLATE.format(page=parts[0], query=query)
 
-def build_name(num, page):
+def build_name(ident, page):
     parts = page.split('?')
     if len(parts) == 1:
-        return NAME_TEMPLATE.format(page=page, qual=num)
+        return NAME_TEMPLATE.format(page=page, qual=ident)
     else:
         qual = parts[1].replace(',', '')
         return NAME_TEMPLATE.format(page=parts[0], qual=qual)
@@ -49,10 +49,10 @@ with open(FILE_NAME, 'r') as fh:
     lines = tidy(fh.readlines())
 
 for line in lines:
-    num, mac, page = line.split()
-    name = build_name(num, page)
+    ident, mac, page = line.split()
+    name = build_name(ident, page)
     url = build_url(page)
 
     fn = build_filename(mac)
     with open(fn, 'w+') as fh:
-        fh.write(CONTENT_TEMPLATE.format(name=name, num=num, url=url))
+        fh.write(CONTENT_TEMPLATE.format(name=name, ident=ident, url=url))
