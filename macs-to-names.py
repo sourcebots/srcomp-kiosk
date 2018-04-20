@@ -48,11 +48,18 @@ def build_filename(mac):
 with open(FILE_NAME, 'r') as fh:
     lines = tidy(fh.readlines())
 
+names = []
+
 for line in lines:
     ident, mac, page = line.split()
     name = build_name(ident, page)
     url = build_url(page)
 
+    names.append(name)
+
     fn = build_filename(mac)
     with open(fn, 'w+') as fh:
         fh.write(CONTENT_TEMPLATE.format(name=name, ident=ident, url=url))
+
+with open('pi-names', mode='w') as f:
+    print('\n'.join(names), file=f)
