@@ -13,5 +13,5 @@ if [ "$filename" = "-" ]; then
 fi
 
 while read -r line; do
-  ssh pi@"$line" 'cd srcomp-kiosk && git pull --ff-only && sudo ./deploy.sh && echo Done || echo Failed'
+  ssh pi@"$line" './srcomp-kiosk/scripts/update && echo Done || echo Failed'
 done < "$filename"
