@@ -2,6 +2,6 @@
 
 cd $(dirname $0)/..
 
-rsync --recursive --delete . $1:srcomp-kiosk
+rsync --recursive --delete --exclude=/ssl/ . $1:srcomp-kiosk
 
 ssh $1 "srcomp-kiosk/scripts/apply-puppet.sh && echo Done || echo Failed"
