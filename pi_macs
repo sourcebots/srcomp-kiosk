@@ -1,12 +1,14 @@
 # Ident     MAC         PAGE
 
-# Outside display on peter's pi2
- x b8:27:eb:d1:9a:f8 outside
+# Arena Corners; SourceBots Pis from ECS
+ 0  b8:27:eb:a6:3d:c6   arena?main,0
+ 1  b8:27:eb:69:c6:c3   arena?main,1
+ 2  b8:27:eb:84:ab:66   arena?main,2
+ 3  b8:27:eb:aa:f4:c6   arena?main,3
 
-# Corner 0 (balcony side near main door)
- 4 b8:27:eb:20:92:1d staging
- 3 b8:27:eb:0f:a4:09 arena?main,0
+# Cube; SourceBots Pis from ECS
+ 4  b8:27:eb:65:17:d1   staging
+ 5  b8:27:eb:58:69:c9   outside
 
-# Corner 1 (stage side near fire exit)
- 1 b8:27:eb:2c:3d:86 staging
- 7 b8:27:eb:7c:7f:eb arena?main,1
+# Bar 2; Peter's Pi 2
+ b2 b8:27:eb:d1:9a:f8   outside
