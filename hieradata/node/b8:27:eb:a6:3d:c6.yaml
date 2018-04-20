@@ -1,4 +1,4 @@
 # Sourcebots Pi 0
 ---
 url: http://%{::compbox_hostname}/arena.html?main,0
-hostname: pi-arena-main0.sb
+hostname: pi-arena-0.sb
