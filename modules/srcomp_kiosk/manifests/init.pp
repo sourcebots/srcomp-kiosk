@@ -145,4 +145,9 @@ class srcomp_kiosk {
     unless  => "${kiosk_runner} status",
     require => File[$kiosk_runner],
   }
+
+  host { $compbox_hostname:
+    ensure => present,
+    ip     => $compbox_ip,
+  }
 }
