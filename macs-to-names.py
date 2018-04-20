@@ -6,7 +6,7 @@ import os.path
 
 FILE_NAME = 'pi_macs'
 NAME_TEMPLATE = 'pi-{page}-{qual}.sb'
-PAGE_TEMPLATE = 'http://%{{::compbox_hostname}}/{page}.html{query}'
+PAGE_TEMPLATE = 'http://%{{hiera(\'compbox_hostname\')}}/{page}.html{query}'
 CONTENT_TEMPLATE = '''# Sourcebots Pi {ident}
 ---
 url: {url}
