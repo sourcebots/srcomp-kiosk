@@ -1,4 +1,4 @@
 # Peter's Pi
 ---
 url: http://%{::compbox_hostname}/outside.html
-hostname: pi-outside-x.sb
+hostname: pi-outside-b2.sb

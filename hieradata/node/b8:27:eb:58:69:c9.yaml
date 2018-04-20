@@ -1,4 +1,4 @@
-# Student Robotics Pi #0
+# Sourcebots Pi 5
 ---
 url: http://%{::compbox_hostname}/outside.html
-hostname: pi-outside-0.sr
+hostname: pi-outside-5.sb
