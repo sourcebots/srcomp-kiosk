@@ -134,6 +134,8 @@ class srcomp_kiosk {
   file { "${opt_kioskdir}/firefox-profile":
     ensure  => directory,
     recurse => true,
+    purge   => true,
+    force   => true,
     source  => 'puppet:///modules/srcomp_kiosk/firefox-profile',
     mode    => '0755',
     require => File[$opt_kioskdir],
