@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh $1 'srcomp-kiosk stop ; srcomp-kiosk/scripts/update && sudo reboot now'

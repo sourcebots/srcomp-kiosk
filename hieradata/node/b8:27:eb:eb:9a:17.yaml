@@ -1,4 +1,4 @@
 # Student Robotics Pi #10
 ---
-url: http://compbox-2017/arena.html?B,3
+url: http://%{::compbox_hostname}/arena.html?B,3
 hostname: pi-arena-B3.sr

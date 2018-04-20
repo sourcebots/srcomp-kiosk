@@ -1,4 +1,4 @@
 # Student Robotics Pi #11
 ---
-url: http://compbox-2017/staging.html
+url: http://%{::compbox_hostname}/staging.html
 hostname: pi-staging-11.sr

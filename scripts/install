@@ -1,0 +1,25 @@
+#!/bin/bash -e
+
+cd $(dirname $0)/..
+
+sudo apt-get install --yes puppet git
+
+git submodule update --init --recursive
+
+puppet_dir='/etc/puppet'
+
+if [[ -d $puppet_dir ]]
+then
+    echo -n "Puppet dir ($puppet_dir) already exists, replace it? [y/N]: "
+    read do_remove
+    if [[ $do_remove = "y" ]]
+    then
+        sudo rm -rf $puppet_dir
+    else
+        exit 1
+    fi
+fi
+
+sudo ln -s $PWD $puppet_dir
+
+exec scripts/apply-puppet.sh

@@ -1,4 +1,4 @@
 # Student Robotics Pi #1
 ---
-url: http://compbox-2017/shepherding.html
+url: http://%{::compbox_hostname}/shepherding.html
 hostname: pi-shepherding-1.sr

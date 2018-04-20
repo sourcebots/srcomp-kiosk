@@ -1,4 +1,4 @@
 # Student Robotics Pi #2
 ---
-url: http://srcomp-screens.herokuapp.com/outside.html
+url: http://%{::compbox_hostname}/outside.html
 hostname: pi-outside-2.sr

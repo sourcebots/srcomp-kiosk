@@ -1,3 +1,3 @@
 node default {
-  include srcomp-kiosk
+  include srcomp_kiosk
 }
