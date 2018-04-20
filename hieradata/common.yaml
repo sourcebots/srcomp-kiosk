@@ -3,4 +3,4 @@ url: 'http://152.78.162.68:8080'
 hostname: raspberrypi.local
 
 compbox_hostname: compbox-2018
-compbox_ip: '192.168.10.23'
+compbox_ip: '192.168.10.210'
