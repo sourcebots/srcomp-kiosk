@@ -1,4 +1,4 @@
 # Sourcebots Pi 4
 ---
-url: http://%{hiera('compbox_hostname')}/staging.html
-hostname: pi-staging-4.sb
+url: http://%{hiera('compbox_hostname')}/outside.html
+hostname: pi-outside-4.sb
