@@ -18,7 +18,7 @@ class srcomp_kiosk {
     servers => [$compbox_hostname],
   }
 
-  package { ["iceweasel"
+  package { ["firefox-esr"
             ,"unclutter"
             ,"python3-yaml"
             ,"x11-xserver-utils"

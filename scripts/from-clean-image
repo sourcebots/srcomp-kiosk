@@ -26,12 +26,15 @@ kpartx -av $IMAGE
 TARGET=$(mktemp -d)
 
 # Wait for the loop to form
-sleep 0.1
+sleep 0.5
 
-mount /dev/mapper/loop0p2 $TARGET
+mount /dev/mapper/loop0p1 $TARGET
 
 # Enable ssh
 touch $TARGET/ssh
+
+umount $TARGET
+mount /dev/mapper/loop0p2 $TARGET
 
 # Copy the repo
 cp -r $REPO_DIR $TARGET/home/pi
