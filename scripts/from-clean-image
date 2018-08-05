@@ -1,0 +1,43 @@
+#!/bin/sh
+
+if [ 0 -ne $(id -u) ]
+then
+    echo "Error: must be run as root"
+    exit 1
+fi
+
+IMAGE="$1"
+
+if [ -z "$IMAGE" ]
+then
+    echo "Usage: $0 IMAGE"
+    echo "The image must be outside the repo when running this script"
+    exit 1
+fi
+
+set -x
+set -e
+
+REPO_DIR=$(realpath $(dirname $0)/..)
+
+# Mount the image
+kpartx -av $IMAGE
+
+TARGET=$(mktemp -d)
+
+# Wait for the loop to form
+sleep 0.1
+
+mount /dev/mapper/loop0p2 $TARGET
+
+# Enable ssh
+touch $TARGET/ssh
+
+# Copy the repo
+cp -r $REPO_DIR $TARGET/home/pi
+chown 1000:1000 -R $TARGET/home/pi/srcomp-kiosk
+
+sync
+
+umount $TARGET
+kpartx -d $IMAGE
