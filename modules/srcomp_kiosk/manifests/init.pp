@@ -8,6 +8,7 @@ class srcomp_kiosk {
   $user_config  = "${user_home}/.config"
   $user_ssh     = "${user_home}/.ssh"
   $url          = hiera('url')
+  $timezone     = hiera('timezone')
 
   $compbox_ip   = hiera('compbox_ip')
   $compbox_hostname = hiera('compbox_hostname')
@@ -16,6 +17,10 @@ class srcomp_kiosk {
 
   class { '::ntp':
     servers => [$compbox_hostname],
+  }
+
+  exec { "/usr/bin/timedatectl set-timezone ${timezone}":
+    unless  => "/usr/bin/timedatectl status | grep 'Time zone: ${timezone}'",
   }
 
   package { ["firefox-esr"
