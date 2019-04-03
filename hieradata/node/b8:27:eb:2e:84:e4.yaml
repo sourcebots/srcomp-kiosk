@@ -1,4 +1,4 @@
 # Student Robotics Pi 3
 ---
-url: http://%{hiera('compbox_hostname')}/livestream.html
-hostname: pi-livestream-3.srobo
+url: http://%{hiera('compbox_hostname')}/outside.html
+hostname: pi-outside-3.srobo
