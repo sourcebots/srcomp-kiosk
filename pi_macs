@@ -7,9 +7,9 @@
  3  b8:27:eb:aa:f4:c6   arena?main,3
 
 # Cube; SR Pi 1 As
-11  b8:27:eb:69:f2:04   staging
-10  b8:27:eb:eb:9a:17   outside
- 9  b8:27:eb:3c:0b:c5   staging
+11  b8:27:eb:69:f2:04   staging # on areana
+10  b8:27:eb:eb:9a:17   outside # cube door
+ 9  b8:27:eb:3c:0b:c5   staging # shepherding desk
 
 # Bar 2; SR Pi 1 As
  8  b8:27:eb:b9:2b:29   outside # bar 2 screen
