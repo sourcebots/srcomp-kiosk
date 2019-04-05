@@ -5,4 +5,4 @@ hostname: raspberrypi.local
 timezone: Europe/London
 
 compbox_hostname: compbox-2019.srobo
-compbox_ip: '192.168.8.230'
+compbox_ip: '10.42.1.99'
