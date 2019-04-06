@@ -8,6 +8,7 @@ class srcomp_kiosk {
   $user_config  = "${user_home}/.config"
   $user_ssh     = "${user_home}/.ssh"
   $url          = hiera('url')
+  $browser_type = hiera('browser_type')
   $timezone     = hiera('timezone')
 
   $compbox_ip   = hiera('compbox_ip')
@@ -113,7 +114,7 @@ class srcomp_kiosk {
   }
 
   $kiosk_script = "${opt_kioskdir}/kiosk.py"
-  $start_command = $kiosk_script
+  $start_command = "$kiosk_script --browser-type ${browser_type}"
   $log_dir = $kiosk_logdir
   file { $kiosk_runner:
     ensure  => file,
