@@ -4,6 +4,8 @@ from __future__ import print_function
 
 import os.path
 
+LIVESTREAM_URL = 'https://www.youtube-nocookie.com/embed/cPk0i3ndPmA'
+
 FILE_NAME = 'pi_macs'
 NAME_TEMPLATE = 'pi-{page}-{qual}.srobo'
 PAGE_TEMPLATE = 'http://%{{hiera(\'compbox_hostname\')}}/{page}.html{query}'
@@ -27,6 +29,9 @@ def tidy(lines):
     return output_lines
 
 def build_url(page):
+    if page == 'livestream':
+        return LIVESTREAM_URL
+
     parts = page.split('?')
     if len(parts) == 1:
         return PAGE_TEMPLATE.format(page=page, query='')

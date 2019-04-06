@@ -1,4 +1,4 @@
 # Student Robotics Pi sb4
 ---
-url: http://%{hiera('compbox_hostname')}/livestream.html
+url: https://www.youtube-nocookie.com/embed/cPk0i3ndPmA
 hostname: pi-livestream-sb4.srobo
