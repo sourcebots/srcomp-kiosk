@@ -29,6 +29,7 @@ class srcomp_kiosk {
             ,"python3-yaml"
             ,"x11-xserver-utils"
             ,"screen"
+            ,"xdotool"
             ]:
     ensure => installed,
   }
