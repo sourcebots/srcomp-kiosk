@@ -2,3 +2,4 @@
 ---
 url: https://www.youtube-nocookie.com/embed/cPk0i3ndPmA
 hostname: pi-livestream-sb4.srobo
+browser_type: chromium-browser

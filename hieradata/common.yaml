@@ -1,6 +1,7 @@
 ---
 url: 'http://152.78.162.68:8080'
 hostname: raspberrypi.local
+browser_type: firefox
 
 timezone: Europe/London
 

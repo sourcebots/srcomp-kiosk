@@ -10,9 +10,15 @@ import time
 import yaml
 
 # Parse arguments to get the config file location
-DEFAULT_BROWSER = 'firefox'
+FIREFOX_TYPE = 'firefox'
+CHROMIUM_TYPE = 'chromium-browser'
+
+DEFAULT_BROWSER_TYPE = FIREFOX_TYPE
 DEFAULT_CONFIG  = '/etc/srcomp-kiosk/config.yaml'
 DEFAULT_PROFILE = '/opt/srcomp-kiosk/firefox-profile'
+
+BROWSER_TYPES = (FIREFOX_TYPE, CHROMIUM_TYPE)
+assert DEFAULT_BROWSER_TYPE in BROWSER_TYPES
 
 logging.basicConfig(stream=sys.stdout,
                     level=logging.INFO,
@@ -25,11 +31,13 @@ parser = argparse.ArgumentParser(description='srcomp kiosk system')
 parser.add_argument('--config', dest='config', help='Config file location '
         '(default: {0})'.format(DEFAULT_CONFIG),
         default=DEFAULT_CONFIG)
-parser.add_argument('--browser', dest='browser', help='Browser to use '
-        '(default: {0}, must be firefox based)'.format(DEFAULT_BROWSER),
-        default=DEFAULT_BROWSER)
-parser.add_argument('--profile', dest='profile', help='Profile to use '
-        "(default: {0}, passed to the browser after '--profile')".format(DEFAULT_PROFILE),
+parser.add_argument('--browser-type', dest='browser_type', help='Browser type to '
+        'use (default: {0})'.format(DEFAULT_BROWSER_TYPE), default=DEFAULT_BROWSER_TYPE,
+        choices=BROWSER_TYPES)
+parser.add_argument('--browser-path', dest='browser_path', help='Path to the '
+        'browser to use (defaults to the value of the type choice)')
+parser.add_argument('--profile', dest='profile', help='Profile to use for firefox '
+        "based browsers (default: {0}, passed to the browser after '--profile')".format(DEFAULT_PROFILE),
         default=DEFAULT_PROFILE)
 
 args = parser.parse_args()
@@ -43,7 +51,8 @@ def Popen(*args, **kwargs):
 class Kiosk(object):
     def __init__(self, args, loop_end):
         self.configPath = args.config
-        self.browser = args.browser
+        self.browser_type = args.browser_type
+        self.browser_path = args.browser_path if args.browser_path else self.browser_type
         self.profilePath = args.profile
         self.loop_end = loop_end
 
@@ -68,7 +77,15 @@ class Kiosk(object):
     def main(self):
         for url in self.get_urls():
             try:
-                Popen([self.browser, "--profile", self.profilePath, url])
+                if self.browser_type == FIREFOX_TYPE:
+                    Popen([self.browser_path, "--profile", self.profilePath, url])
+                elif self.browser_type == CHROMIUM_TYPE:
+                    # Oddly, this option doesn't seem documented, and there is
+                    # an '--app=URL' option documented. Testing shows that
+                    # '--app' doens't seem to work, while '--kiosk' does.
+                    Popen([self.browser_path, "--kiosk", url])
+                else:
+                    raise AssertionError("Unexpected browser type {}".format(self.browser_type))
             except:
                 logging.exception("Failed to set url to '%s'.", url)
 
