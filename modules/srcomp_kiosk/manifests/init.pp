@@ -30,6 +30,8 @@ class srcomp_kiosk {
             ,"x11-xserver-utils"
             ,"screen"
             ,"xdotool"
+            ,"htop"
+            ,"ntpstat"  #  but `ntpq -p` is more useful
             ]:
     ensure => installed,
   }
