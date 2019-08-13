@@ -6,30 +6,6 @@
  2  b8:27:eb:84:ab:66   arena?main,2
  3  b8:27:eb:aa:f4:c6   arena?main,3
 
-# Cube; SR Pi 1 As
-11  b8:27:eb:69:f2:04   staging # on areana
-10  b8:27:eb:eb:9a:17   outside # cube door
- 9  b8:27:eb:3c:0b:c5   shepherding # shepherding desk
-
-# Bar 2; SR Pi 1 As
- 8  b8:27:eb:b9:2b:29   outside # bar 2 screen
- 7  b8:27:eb:be:ce:73   outside # helpdesk
-
-# Level 3, SUSU Cafe, need VGA adapters
-sb4 b8:27:eb:65:17:d1   livestream
- 6  b8:27:eb:ed:f2:77   outside
-
-# Level 3, SUSU Cafe by the door
- 5  b8:27:eb:e4:7a:ef   outside
-
-# Bar 3
-sb5 b8:27:eb:58:69:c9   outside # not sure yet, might be livestream
-
-# Level 4
- 4  b8:27:eb:ec:0e:80   outside # overhead as you go down the stairs
-
-# Others
- 3  b8:27:eb:2e:84:e4   outside
- 2  b8:27:eb:e9:ec:98   outside
- 1  b8:27:eb:51:84:16   outside
- 0  b8:27:eb:89:e9:e0   outside
+# Cube; SourceBots Pis from ECS
+ 4  b8:27:eb:65:17:d1   staging # on areana
+ 5  b8:27:eb:58:69:c9   outside # cube door

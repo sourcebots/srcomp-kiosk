@@ -1,5 +1,4 @@
-# Student Robotics Pi sb4
+# SourceBots Pi 4
 ---
-url: https://www.youtube-nocookie.com/embed/PS-CUiA_nLo
-hostname: pi-livestream-sb4.srobo
-browser_type: chromium-browser
+url: http://%{hiera('compbox_hostname')}/staging.html
+hostname: pi-staging-4.srobo
