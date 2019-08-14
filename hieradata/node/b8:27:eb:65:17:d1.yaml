@@ -1,4 +1,4 @@
 # SourceBots Pi 4
 ---
-url: http://%{hiera('compbox_hostname')}/staging.html
-hostname: pi-staging-4.srobo
+url: http://%{hiera('compbox_hostname')}/arena.html?main,0
+hostname: pi-arena-main0.srobo

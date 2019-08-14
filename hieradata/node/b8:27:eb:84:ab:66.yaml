@@ -1,4 +1,4 @@
 # SourceBots Pi 2
 ---
-url: http://%{hiera('compbox_hostname')}/arena.html?main,2
-hostname: pi-arena-main2.srobo
+url: http://%{hiera('compbox_hostname')}/arena.html?main,3
+hostname: pi-arena-main3.srobo
