@@ -7,7 +7,7 @@ import os.path
 LIVESTREAM_URL = 'https://www.youtube-nocookie.com/embed/cPk0i3ndPmA'
 
 FILE_NAME = 'pi_macs'
-NAME_TEMPLATE = 'pi-{page}-{qual}.srobo'
+NAME_TEMPLATE = 'pi-{page}-{qual}.sb'
 PAGE_TEMPLATE = 'http://%{{hiera(\'compbox_hostname\')}}/{page}.html{query}'
 CONTENT_TEMPLATE = '''# SourceBots Pi {ident}
 ---

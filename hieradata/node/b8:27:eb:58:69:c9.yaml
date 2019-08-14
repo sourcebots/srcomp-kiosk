@@ -1,4 +1,4 @@
 # SourceBots Pi 5
 ---
 url: http://%{hiera('compbox_hostname')}/outside.html
-hostname: pi-outside-5.srobo
+hostname: pi-outside-5.sb
