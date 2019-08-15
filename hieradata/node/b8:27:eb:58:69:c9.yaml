@@ -2,3 +2,5 @@
 ---
 url: http://%{hiera('compbox_hostname')}/outside.html
 hostname: pi-outside-5.sb
+
+compbox_ip: '152.78.146.73'
