@@ -1,4 +1,4 @@
 # Peter's Pi
 ---
-url: 'http://srobo.org'
-hostname: 'peters-pi.local'
+url: http://%{hiera('compbox_hostname')}/outside.html
+hostname: pi-outside-x.sb

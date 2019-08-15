@@ -6,6 +6,9 @@
  1  b8:27:eb:69:c6:c3   arena?main,2
  2  b8:27:eb:84:ab:66   arena?main,3
 
-# Cube; SourceBots Pis from ECS
- 0  b8:27:eb:a6:3d:c6   staging # on areana
- 5  b8:27:eb:58:69:c9   outside # cube door
+# Cube
+ 0  b8:27:eb:a6:3d:c6   staging # on areana; SourceBots Pi
+ x  b8:27:eb:d1:9a:f8   outside # Cube corner; Peter's Pi
+
+# Bar 2
+ 5  b8:27:eb:58:69:c9   outside # bar 2; SourceBots Pi
